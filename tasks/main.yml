@@ -16,3 +16,8 @@
     name: ubuntu
     group: docker
     append: yes
+- name: check docker version
+  command: docker --version
+  register: docker_version
+- debug:
+    msg: "Docker version is {{ docker_version.stdout }}"
